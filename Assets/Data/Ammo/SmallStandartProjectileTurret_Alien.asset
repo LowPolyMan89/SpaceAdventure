@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3af9c72b10d144b86b8e09db6be594, type: 3}
+  m_Name: SmallStandartProjectileTurret_Alien
+  m_EditorClassIdentifier: 
+  AmmoPrefab: {fileID: 1501479726757976511, guid: d7b3f6931b5ef8c4894ad67215b7bfe1,
+    type: 3}
+  MinDamage: 25
+  MaxDamage: 50
+  Accuracy: 0.7
+  ShieldBonusDamage: 0
+  ArmorBonusDamage: 0
+  HitPointBonusDamage: 0
+  ArmorPenetration: 0
+  AmmoSpeed: 350
+  CritChance: 0.1
+  RPS: 2
+  ReloadingTime: 2
+  AmmoCount: 2
+  DistanceDepend:
+  - distance: 0
+    AccuracyMod: 0.8
+    CritChanceMod: 1
+    DamageMod: 1
+  - distance: 1
+    AccuracyMod: 0.9
+    CritChanceMod: 1
+    DamageMod: 1
+  - distance: 2
+    AccuracyMod: 1
+    CritChanceMod: 1
+    DamageMod: 1
