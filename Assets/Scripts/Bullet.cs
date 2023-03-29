@@ -14,9 +14,13 @@ public class Bullet : Ammo
 
     private bool isMiss;
     private bool isCheck;
-    
-    public override void CreateAmmo(Transform target, AmmoStatsData ammoStatsData)
+    private Ship atackerShip;
+
+    public Ship AtackerShip => atackerShip;
+
+    public override void CreateAmmo(Transform target, AmmoStatsData ammoStatsData, Ship attacker)
     {
+        atackerShip = attacker;
         _ammoStatsData = ammoStatsData;
         _target = target;
         startTime = Time.time;
@@ -48,7 +52,7 @@ public class Bullet : Ammo
 
                 if (_target != damagable.GetSelfTransform()) return;
 
-                isMiss = damagable.TakeDamage(_ammoStatsData).isMissing;
+                isMiss = damagable.TakeDamage(_ammoStatsData, atackerShip).isMissing;
                 
                 isCheck = true;
                 
@@ -68,6 +72,6 @@ public class Bullet : Ammo
 
 internal interface  IDamagable
 {
-    CalculatedDamage TakeDamage(AmmoStatsData ammoStatsData);
+    CalculatedDamage TakeDamage(AmmoStatsData ammoStatsData, Ship attackerShip);
     Transform GetSelfTransform();
 }

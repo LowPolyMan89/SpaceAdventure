@@ -23,11 +23,15 @@ public class BattleUI : MonoBehaviour, IPaused
     [SerializeField] private Weapon selectedWeapon;
     [SerializeField] private Transform tmpSelectTarget;
     [SerializeField] private List<GameObject> DisabledUIfromPause = new List<GameObject>();
+
+    [SerializeField] private HUDShipStatus _hudShipStatusPrefab;
     
 
     private void Awake()
     {
         Events.OnPauseEvent += Pause;
+        Events.OnNewShipSpawnEvent += OnCreateNewShip;
+        Events.OnShipDestroyEvent += OnDestroyShip;
     }
 
     private void Start()
@@ -38,9 +42,23 @@ public class BattleUI : MonoBehaviour, IPaused
 
     public bool Pause(bool val)
     {
-        SelectShip(_battle.PlayerShips[currentShipIndx]);
+        currentShipIndx = 0;
         DisabledUIfromPause.ForEach(d => d.SetActive(val));
+        SelectShip(_battle.PlayerShips[currentShipIndx]);
         return val;
+    }
+
+    public Ship OnCreateNewShip(Ship ship)
+    {
+        HUDShipStatus hudShipStatus = Instantiate(_hudShipStatusPrefab, transform);
+        hudShipStatus.transform.localScale = Vector3.one;
+        hudShipStatus.ship = ship;
+        return ship;
+    }
+    
+    public Ship OnDestroyShip(Ship ship)
+    {
+        return ship;
     }
     
     public void SelectShip(Ship ship)
@@ -155,6 +173,8 @@ public class BattleUI : MonoBehaviour, IPaused
     private void OnDestroy()
     {
         Events.OnPauseEvent -= Pause;
+        Events.OnNewShipSpawnEvent += OnCreateNewShip;
+        Events.OnShipDestroyEvent += OnDestroyShip;
     }
 }
 

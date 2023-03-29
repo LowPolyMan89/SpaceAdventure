@@ -34,6 +34,7 @@ public class Ship : MonoBehaviour
         ai = new Ai(this);
         if (Side != ShipSide.Player) AI.isEnabled = true;
         Events.OnNewShipSpawnAction(this);
+        weaponController.Init(this);
     }
 
     public void TakeDamage(CalculatedDamage calculated)

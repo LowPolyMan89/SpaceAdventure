@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class DamageCalculator
 {
-    public static CalculatedDamage GetCalculatedDamage(Stats targetShipStats, AmmoStatsData ammoStatsData, Distance currentDistance)
+    public static CalculatedDamage GetCalculatedDamage(Stats targetShipStats, AmmoStatsData ammoStatsData, Distance currentDistance, Ship attackedShip, Ship damagingShip)
     {
         CalculatedDamage _calculatedDamage = new CalculatedDamage();
         
@@ -13,6 +13,9 @@ public static class DamageCalculator
          float AccuracyMod = 1;
          float CritChanceMod = 1;
          float DamageMod = 1;
+
+         _calculatedDamage.AttackedShip = attackedShip;
+         _calculatedDamage.DamagingShip = damagingShip;
          
          switch (distance)
          {
@@ -96,4 +99,6 @@ public struct CalculatedDamage
     public float ArmorDamage;
     public bool isCrit;
     public bool isMissing;
+    public Ship AttackedShip;
+    public Ship DamagingShip;
 }

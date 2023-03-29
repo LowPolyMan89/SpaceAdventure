@@ -13,8 +13,15 @@ public class Weapon : MonoBehaviour
     
     [SerializeField] private Transform _targetTransform;
 
+    
+    
     public Gun Gun => _gun;
 
+    public void Init(Ship ship)
+    {
+        _gun.ship = ship;
+    }
+    
     private void Update()
     {
         if(!_targetTransform) return;

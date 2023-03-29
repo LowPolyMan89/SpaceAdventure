@@ -8,6 +8,8 @@ public static class Events
    public static Func<Ship, Ship> OnNewShipSpawnEvent;
    public static Func<Ship, Ship> OnShipDestroyEvent;
    public static Func<bool, bool> OnPauseEvent;
+   public static Func<CalculatedDamage, CalculatedDamage> OnTakeDamageEvent;
+   
    public static bool isPaused;
    
    public static Ship OnNewShipSpawnAction(Ship ship)
@@ -19,6 +21,15 @@ public static class Events
       return ship;
    }
 
+   public static CalculatedDamage OnTakeDamageAction(CalculatedDamage calculatedDamage)
+   {
+      if (OnTakeDamageEvent != null)
+      {
+         OnTakeDamageEvent(calculatedDamage);
+      }
+      return calculatedDamage;
+   }
+   
    public static Ship OnNewShipDestroyAction(Ship ship)
    {
       if (OnShipDestroyEvent != null)

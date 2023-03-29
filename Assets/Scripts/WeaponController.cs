@@ -8,6 +8,15 @@ public class WeaponController : MonoBehaviour
 
     public List<WeaponSlot> WeaponSlots => _weaponSlots;
 
+
+    public void Init(Ship ship)
+    {
+        foreach (var w in _weaponSlots)
+        {
+            w.Init(ship);
+        }
+    }
+    
     public void SetTargetToWeapon(int indx, Transform target)
     {
         WeaponSlots[indx].MountedWeapon.AddTarget(target);

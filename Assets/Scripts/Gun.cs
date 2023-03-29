@@ -14,6 +14,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private bool isReloading;
     [SerializeField] private bool isFiring;
     [SerializeField] private int ammoCapacity;
+    public Ship ship;
 
     public bool IsReloading => isReloading;
 
@@ -78,7 +79,7 @@ public class Gun : MonoBehaviour
         {
             ammoCapacity--;
             Ammo ammo = Instantiate(_ammoPrefab, firePoint.position, Quaternion.identity).GetComponent<Ammo>();
-            ammo.CreateAmmo(target, _ammoStats);
+            ammo.CreateAmmo(target, _ammoStats, ship);
         }
         
     }

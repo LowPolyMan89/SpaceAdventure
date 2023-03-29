@@ -1783,8 +1783,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437490898}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1807,8 +1807,8 @@ Transform:
   - {fileID: 743782571}
   - {fileID: 2143066638}
   - {fileID: 2114529217}
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 868556474}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &437490900
 MonoBehaviour:
@@ -3788,6 +3788,7 @@ RectTransform:
   - {fileID: 314434636}
   - {fileID: 1055319571}
   - {fileID: 1268192879}
+  - {fileID: 437490899}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3827,6 +3828,8 @@ MonoBehaviour:
   - {fileID: 1268192878}
   - {fileID: 1691905038}
   - {fileID: 437490898}
+  _hudShipStatusPrefab: {fileID: 8999547134402923356, guid: aaa785b3703e1d644b9f588c4f2a783e,
+    type: 3}
 --- !u!1001 &870076694
 PrefabInstance:
   m_ObjectHideFlags: 0
