@@ -49,6 +49,7 @@ public class Battle : MonoBehaviour, IPaused
       speedSumm = GetSlowestShip(PlayerShips) + GetSlowestShip(EnemyShips);
       PauseTimeDelay = BattleStepTime;
       Events.OnPauseAction(true);
+      AddTargetToShips();
    }
 
    public void NextBattleStep()
@@ -62,6 +63,21 @@ public class Battle : MonoBehaviour, IPaused
       yield return new WaitForSeconds(BattleStepTime);
       PauseTimeDelay = battleStepTime;
       Events.OnPauseAction(true);
+      AddTargetToShips();
+   }
+
+   private void AddTargetToShips()
+   {
+      foreach (var ship in _playerShips)
+      {
+         if (!ship.selectedTarget)
+            ship.AI.SelectNewTarget(true, null);
+      }
+      foreach (var ship in _enemyShips)
+      {
+         if(!ship.selectedTarget)
+            ship.AI.SelectNewTarget(true, null);
+      }
    }
    
    private void Update()

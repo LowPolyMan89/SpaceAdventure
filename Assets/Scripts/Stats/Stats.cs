@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BuffCuntroller))]
 public class Stats : MonoBehaviour
 {
    [SerializeField] private ShipStatsData shipStatsData;
+   [SerializeField] private BuffCuntroller _buffCuntroller;
    
    public float HitPoint;
    public float Armor;
@@ -16,6 +18,13 @@ public class Stats : MonoBehaviour
 
    public ShipStatsData StatsData => shipStatsData;
 
+   public BuffCuntroller BuffCuntroller => _buffCuntroller;
+
+   private void Awake()
+   {
+      _buffCuntroller = gameObject.GetComponent<BuffCuntroller>();
+   }
+
    private void Start()
    {
       HitPoint = StatsData.HitPoint;
@@ -24,5 +33,13 @@ public class Stats : MonoBehaviour
       Shield = StatsData.Shield;
       Evasion = StatsData.Evasion;
       Speed = StatsData.Speed;
+   }
+}
+[System.Serializable]
+public class Stat
+{
+   public enum StatType
+   {
+      
    }
 }

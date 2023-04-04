@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AmmoStatsData", menuName = "ScriptableObjects/AmmoStatsData", order = 1)]
 public class AmmoStatsData : ScriptableObject
 {
+   public AmmoType ammoType;
    public Sprite WeaponSprite;
    public GameObject AmmoPrefab;
    public float MinDamage;
@@ -30,5 +31,10 @@ public class AmmoStatsData : ScriptableObject
       public float CritChanceMod;
       public float DamageMod;
    }
+}
+
+public enum AmmoType
+{
+   Bullet, Ray, Rocket, Splash
 }
 

@@ -21,23 +21,26 @@ public static class DamageCalculator
          {
              case Distance.Long:
                  AccuracyMod = ammoStatsData.DistanceDepend[0].AccuracyMod;
-                 CritChanceMod = ammoStatsData.DistanceDepend[0].AccuracyMod;
-                 DamageMod = ammoStatsData.DistanceDepend[0].AccuracyMod;
+                 CritChanceMod = ammoStatsData.DistanceDepend[0].CritChanceMod;
+                 DamageMod = ammoStatsData.DistanceDepend[0].DamageMod;
                  break;
              case Distance.Medium:
                  AccuracyMod = ammoStatsData.DistanceDepend[1].AccuracyMod;
-                 CritChanceMod = ammoStatsData.DistanceDepend[1].AccuracyMod;
-                 DamageMod = ammoStatsData.DistanceDepend[1].AccuracyMod;
+                 CritChanceMod = ammoStatsData.DistanceDepend[1].CritChanceMod;
+                 DamageMod = ammoStatsData.DistanceDepend[1].DamageMod;
                  break;
              case Distance.Close:
                  AccuracyMod = ammoStatsData.DistanceDepend[2].AccuracyMod;
-                 CritChanceMod = ammoStatsData.DistanceDepend[2].AccuracyMod;
-                 DamageMod = ammoStatsData.DistanceDepend[2].AccuracyMod;
+                 CritChanceMod = ammoStatsData.DistanceDepend[2].CritChanceMod;
+                 DamageMod = ammoStatsData.DistanceDepend[2].DamageMod;
                  break;
          }
    
 
         _calculatedDamage.isMissing = CalculateChance(ammoStatsData.Accuracy * AccuracyMod - targetShipStats.Evasion);
+
+        if (ammoStatsData.ammoType == AmmoType.Rocket)
+            _calculatedDamage.isMissing = false;
 
         if (_calculatedDamage.isMissing) return _calculatedDamage;
         

@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8371570773231800748}
   - component: {fileID: 359047583310863625}
   m_Layer: 0
-  m_Name: SmallGunTurret
+  m_Name: SmallRocketTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,10 +94,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca381525f55c843b78c6e314f3c963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ammoPrefab: {fileID: 1501479726757976511, guid: d7b3f6931b5ef8c4894ad67215b7bfe1,
+  _ammoPrefab: {fileID: 1501479726757976511, guid: a1940ed94dd93334c97605463ca82226,
     type: 3}
   _rps: 0
-  _ammoStats: {fileID: 11400000, guid: 48ec4ed7d297c6c4f918125ca4c2b39c, type: 2}
+  _ammoStats: {fileID: 11400000, guid: d4cc7fb60523bde4d827fe2713018a6d, type: 2}
   reloadTime: 0
   isReloading: 0
   isFiring: 0

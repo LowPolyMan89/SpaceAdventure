@@ -34,7 +34,7 @@ public class Bullet : Ammo
     void Update()
     {
         if(!isCreate) return;
-        if(Events.isPaused) return;
+        //if(Events.isPaused) return;
         
         float timeSinceStart = Time.time - startTime;
         float fractionOfJourney = timeSinceStart * _ammoStatsData.AmmoSpeed / distance;

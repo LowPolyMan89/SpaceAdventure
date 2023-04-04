@@ -10,33 +10,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc3af9c72b10d144b86b8e09db6be594, type: 3}
-  m_Name: SmallStandartProjectileTurret_Alien
+  m_Name: SmallStandartRocketTurret
   m_EditorClassIdentifier: 
-  WeaponSprite: {fileID: 0}
-  AmmoPrefab: {fileID: 1501479726757976511, guid: d7b3f6931b5ef8c4894ad67215b7bfe1,
+  ammoType: 2
+  WeaponSprite: {fileID: 21300000, guid: fa2326a2d98ddc54484f4de9e0446819, type: 3}
+  AmmoPrefab: {fileID: 1501479726757976511, guid: a1940ed94dd93334c97605463ca82226,
     type: 3}
-  MinDamage: 2
-  MaxDamage: 5
+  MinDamage: 50
+  MaxDamage: 100
   Accuracy: 1
   ShieldBonusDamage: 0
-  ArmorBonusDamage: 0
-  HitPointBonusDamage: 0
+  ArmorBonusDamage: 10
+  HitPointBonusDamage: 10
   ArmorPenetration: 0
-  AmmoSpeed: 350
-  CritChance: 0.05
-  RPS: 5
-  ReloadingTime: 2
-  AmmoCount: 25
+  AmmoSpeed: 100
+  CritChance: 0.2
+  RPS: 1
+  ReloadingTime: 3
+  AmmoCount: 1
   DistanceDepend:
   - distance: 0
-    AccuracyMod: 0.5
+    AccuracyMod: 1
     CritChanceMod: 1
     DamageMod: 1
   - distance: 1
-    AccuracyMod: 0.8
+    AccuracyMod: 1
     CritChanceMod: 1
     DamageMod: 1
   - distance: 2
-    AccuracyMod: 1.2
+    AccuracyMod: 1
     CritChanceMod: 1
     DamageMod: 1
